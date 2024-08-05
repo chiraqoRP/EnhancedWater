@@ -1,0 +1,63 @@
+"Water"
+{
+	"$abovewater" 0
+	"%compilewater" 1
+	"$forceexpensive" 1
+	"$reflectentities" 0
+	"%tooltexture" "gm_construct/water_13_normal"
+	"$refracttexture" "_rt_WaterRefraction"
+	"$refractamount" "0"
+
+	"$scale" "[ 0.015 0.015 ]"
+
+	"$normalmap" "ew\water_bump_large"
+
+	"$surfaceprop" "water"
+	"$bumpframe" "0"
+
+	"$fogenable" "1"
+//	"$fogcolor" "{15 32 36}"
+	"$fogcolor" "{24 64 72}"
+	"$fogstart" "-512."
+	"$fogend" "3000"
+
+	$underwateroverlay "ew\underwater_warp"
+
+	"$scroll1" "[.01 .01 .05]"
+	"$scroll2" "[-.025 .025 .075]"
+
+	"$translate" "[0 0]"
+
+	"Proxies"
+	{
+		Sine
+		{
+			sinemin 0.13
+			sinemax 0.22
+			sineperiod 5
+			resultVar	$refractamount
+		}
+		Sine
+		{
+			sineperiod	4
+			sinemin		0
+			sinemax		0.03
+			timeoffset	0.5
+			resultVar	"$translate[0]"
+		}
+		Sine
+		{
+			sineperiod	5.5
+			sinemin		0
+			sinemax		0.03
+			timeoffset	0
+			resultVar	"$translate[1]"
+		}
+		TextureTransform
+		{
+			translateVar	$translate
+			scaleVar		$scale
+			resultVar	$bumptransform
+	        	}
+	}
+}

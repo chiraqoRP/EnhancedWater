@@ -1,0 +1,33 @@
+"Refract"
+{
+	"%keywords" "tf"
+	"$refracttint" "{255 255 255}"
+	"$refractblur" "1"
+
+	$refractamount	1
+
+
+	"$scale" "[1 1]"
+
+	"$normalmap" "ew\hc_water_nice1_bump"
+	"$bumpframe" "0"
+
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$bumptransform"
+			"texturescrollrate" .1
+			"texturescrollangle" 45.00
+		}
+		Sine
+		{
+			sineperiod	4
+			sinemin		0.01
+			sinemax		0.03
+			timeoffset		0.5
+			resultVar		$refractamount
+		}
+	}
+}

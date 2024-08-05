@@ -1,0 +1,19 @@
+"Refract"
+{
+	$normalmap	"ew\watersplash_002b_n"
+
+	$refractamount	-0.25
+	$bluramount	5
+	$vertexalpha	1
+	$vertexcolor	1
+	$additive		0
+
+	$nofog		0
+	$nowritez		0
+
+	$translucent	0
+	$model		1
+
+	$nodiffusebumplighting	1
+	$vertexcolormodulate	0
+}
