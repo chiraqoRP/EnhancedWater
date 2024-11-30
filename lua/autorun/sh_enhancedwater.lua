@@ -24,43 +24,6 @@ local dust = {
 	["foliage"] = true
 }
 
-local wood = {
-	["wood"] = true,
-	["wood_box"] = true,
-	["wood_crate"] = true,
-	["wood_furniture"] = true,
-	["wood_lowdensity"] = true,
-	["wood_plank"] = true,
-	["wood_panel"] = true,
-	["wood_solid"] = true
-}
-
-local metal = {
-	["canister"] = true,
-	["chain"] = true,
-	["chainlink"] = true,
-	["combine_metal"] = true,
-	["crowbar"] = true,
-	["floating_metal_barrel"] = true,
-	["grenade"] = true,
-	["gunship"] = true,
-	["metal"] = true,
-	["metal_barrel"] = true,
-	["metal_bouncy"] = true,
-	["metal_box"] = true,
-	["metal_seafloorcar"] = true,
-	["metalgrate"] = true,
-	["metalpanel"] = true,
-	["metalvent"] = true,
-	["metalvehicle"] = true,
-	["popcan"] = true,
-	["roller"] = true,
-	["slipperymetal"] = true,
-	["solidmetal"] = true,
-	["strider"] = true,
-	["weapon"] = true
-}
-
 local shards = {
 	["ice"] = true,
 	["glass"] = true,
