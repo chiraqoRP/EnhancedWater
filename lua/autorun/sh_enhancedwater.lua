@@ -300,7 +300,7 @@ hook.Add("PlayerFootstep", "EnhancedWater.Step", function(ply, pos, foot, sound,
 
 	local curTime = CurTime()
 	
-	if curTime > ply:GetNW2Int("LastUnderwaterStepTime", curTime) + ply:GetNW2Int("UnderwaterStepDelay", 0.35) then
+	if curTime > ply:GetNW2Float("EnhancedWater.LastStepTime", curTime) + ply:GetNW2Float("EnhancedWater.StepDelay", 0.35) then
 		local isSprinting = ply:KeyDown(IN_SPEED)
 		local isCrouching = ply:KeyDown(IN_DUCK)
 
@@ -309,22 +309,27 @@ hook.Add("PlayerFootstep", "EnhancedWater.Step", function(ply, pos, foot, sound,
 				ply:EmitSound(stepSnds[math.random(1, #stepSnds)], 40, math.random(99, 101))
 			end
 
-			ply:SetNW2Int("UnderwaterStepDelay", 0.65)
+			ply:SetNW2Float("EnhancedWater.StepDelay", 0.65)
 		elseif isSprinting then
 			if footsteps:GetBool() then
 				ply:EmitSound(sprintSnds[math.random(1, #sprintSnds)], 40, math.random(99, 101))
 			end
 
-			ply:SetNW2Int("UnderwaterStepDelay", 0.3)
+			ply:SetNW2Float("EnhancedWater.StepDelay", 0.3)
 		end
 
-		ply:SetNW2Int("LastUnderwaterStepTime", curTime)
+		ply:SetNW2Float("EnhancedWater.LastStepTime", curTime)
 	end
 		
 	-- return false
 end)
 
-local liquidSnds = {"physics/flesh/flesh_squishy_impact_hard1.wav", "physics/flesh/flesh_squishy_impact_hard2.wav", "physics/flesh/flesh_squishy_impact_hard3.wav", "physics/flesh/flesh_squishy_impact_hard4.wav"}
+local liquidSnds = {
+	"physics/flesh/flesh_squishy_impact_hard1.wav",
+	"physics/flesh/flesh_squishy_impact_hard2.wav",
+	"physics/flesh/flesh_squishy_impact_hard3.wav",
+	"physics/flesh/flesh_squishy_impact_hard4.wav"
+}
 
 local function Physics(ent, data)			
 	if !ent or !data.HitEntity:IsWorld() then
